@@ -1,0 +1,40 @@
+[
+{"config": [{ "debug": "yes",
+              "debuglog": "/tmp/logscan_debug.log", 
+              "errorlog": "/tmp/logscan_error.log",
+              "infolog": "/tmp/logscan_info.log",
+              "configpath" : "config" ,
+              "sleeptime": 30 ,
+              "logfile": "/tmp/teste.log",
+              "exportstatistic": "yes",
+              "statisticpath": "/tmp/statistic.json" }]},
+{"zabbix": [
+	{ "sendtozabbix": "no", "zabbixserver": "192.168.15.20", "zabbixport": "10051"},
+	{ "sendtozabbix": "no", "zabbixserver": "192.168.102.1", "zabbixport": "10051"}
+	]
+},
+{"mongodb":[
+	{ "sendtodb": "no", "delay": 2, "dburl": "mongodb://localhost:27017/", "dbname": "prod" },
+	{ "sendtodb": "no", "delay": 2, "dburl": "mongodb://192.168.101.1:27017/", "dbname": "teste" }
+	]
+},
+{"extra": [
+	{"name": "cliente1", "key": "cliente1", "regex": "cliente1"},
+	{"name": "cliente2", "key": "cliente2", "regex": "cliente2"},
+	{"name": "cliente3", "key": "cliente3", "regex": "cliente3"}
+	]
+},
+{
+"principal": [
+	{ "name" : "porta", "regex": "PRT.([0-9]{2,})" }
+	]
+},
+{
+"filters": [
+	{"name": "rede_160", "regex": "Source.*(192.168.160)"},
+	{"name": "rede_161", "regex": "Source.*(192.168.161)"},
+	{"name": "OK", "regex": "Msg.*(OK)"},
+	{"name": "ERROR", "regex": "Msg.*(ERROR)"}
+	]
+}
+]
