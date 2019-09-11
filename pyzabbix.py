@@ -7,6 +7,8 @@ from decimal import Decimal
 import inspect
 import socket
 import struct
+import re
+import json
 
 # For python 2 and 3 compatibility
 try:
