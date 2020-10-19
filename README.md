@@ -5,7 +5,7 @@ Licença: GPLv3
 
 ## Dependências
 
-Para grava estatistica no MongoDB
+Para gravar estatistica no MongoDB
 yum/dnf install python3-pymongo python3-bson
 
 ## Configuração
